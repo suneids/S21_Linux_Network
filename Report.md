@@ -146,9 +146,7 @@ Settings -> network -> включаем адаптер, выбираем NAT net
 
 **Добавляем статический маршрут от одной машины до другой с помощью файла etc/netplan/00-installer-config.yaml**  
 ![Содержимое файла etc/netplan/00-installer-config.yaml](/screenshots/screenshot7.png)  
-* Выполняем команду 
-    sudo netplan apply
-для перезапуска сети 
+* Выполняем команду `sudo netplan apply` для перезапуска сети 
 
 **Пингуем соединение между машинами**  
 ![Результаты команды ping на машинах](/screenshots/screenshot8.png)
