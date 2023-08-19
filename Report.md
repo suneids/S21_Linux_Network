@@ -185,7 +185,9 @@ Settings -> network -> включаем адаптер, выбираем NAT net
 * -R — режим Reverse Mode для тестирования входящей скорости  
 * Получаем скорость около 4.84 Gbits/sec  
 ![Вывод на ws2](/screenshots/screenshot10.png)  
+Вывод на ws2  
 ![Вывод на ws1](/screenshots/screenshot11.png)
+Вывод на ws1
 
 ## Part 4. Сетевой экран ##
 <a name="Part4"/>
