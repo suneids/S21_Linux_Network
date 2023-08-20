@@ -283,20 +283,20 @@ ws21. Аналогично пропинговать r1 с ws11.**
 
 **== Выполнение ==**
 * Содержание файла etc/netplan/00-installer-config.yaml у ws11  
- ![etc/netplan/00-installer-config.yaml у ws11](/screenshots/screenshot19.png)  
+![etc/netplan/00-installer-config.yaml у ws11](/screenshots/screenshot19.png)  
 * Содержание файла etc/netplan/00-installer-config.yaml у ws21  
- ![etc/netplan/00-installer-config.yaml у ws21](/screenshots/screenshot20.png)  
+![etc/netplan/00-installer-config.yaml у ws21](/screenshots/screenshot20.png)  
 * Содержание файла etc/netplan/00-installer-config.yaml у ws22  
- ![etc/netplan/00-installer-config.yaml у ws22](/screenshots/screenshot21.png)  
+![etc/netplan/00-installer-config.yaml у ws22](/screenshots/screenshot21.png)  
 * Содержание файла etc/netplan/00-installer-config.yaml у r1  
- ![etc/netplan/00-installer-config.yaml у r1](/screenshots/screenshot22.png)  
+![etc/netplan/00-installer-config.yaml у r1](/screenshots/screenshot22.png)  
 * Содержание файла etc/netplan/00-installer-config.yaml у r2  
- ![etc/netplan/00-installer-config.yaml у r2](/screenshots/screenshot23.png)
+![etc/netplan/00-installer-config.yaml у r2](/screenshots/screenshot23.png)
 
- ![Ввод команды sudo netplan apply](/screenshots/screenshot24.png)  
- * Использование команды sudo netplan apply  
- ![Результат пинга](/screenshots/screenshot25.png)  
- * Пингуем w22 c ws 21 и r1 с ws11
+* Использование команды sudo netplan apply  
+![Ввод команды sudo netplan apply](/screenshots/screenshot24.png)  
+* Пингуем w22 c ws 21 и r1 с ws11  
+![Результат пинга](/screenshots/screenshot25.png)
 
 **== Задание 5.2 ==**
 
