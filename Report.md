@@ -268,6 +268,7 @@ firewall.sh на ws2
 
 **== Выполнение ==**
 
+* Добавляем каждой виртуальной машине адаптер "Внутренняя сеть" и запускаем  
 ![Запущенные виртуальные машины](/screenshots/screenshot18.png)  
 
 **== Задание 5.1 ==**
@@ -276,14 +277,26 @@ firewall.sh на ws2
 
 **Настроить конфигурации машин в etc/netplan/00-installer-config.yaml согласно сети на рисунке.**  
 * В отчёт поместить скрины с содержанием файла etc/netplan/00-installer-config.yaml для каждой машины.
- 
+
 **Перезапустить сервис сети. Если ошибок нет, то командой ip -4 a проверить, что адрес машины задан верно. Также пропинговать ws22 с
-ws21. Аналогично пропинговать r1 с ws11.**  
-* В отчёт поместить скрины с вызовом и выводом использованных команд.
+ws21. Аналогично пропинговать r1 с ws11.**
 
 **== Выполнение ==**
+* Содержание файла etc/netplan/00-installer-config.yaml у ws11  
+ ![etc/netplan/00-installer-config.yaml у ws11](/screenshots/screenshot19.png)  
+* Содержание файла etc/netplan/00-installer-config.yaml у ws21  
+ ![etc/netplan/00-installer-config.yaml у ws21](/screenshots/screenshot20.png)  
+* Содержание файла etc/netplan/00-installer-config.yaml у ws22  
+ ![etc/netplan/00-installer-config.yaml у ws22](/screenshots/screenshot21.png)  
+* Содержание файла etc/netplan/00-installer-config.yaml у r1  
+ ![etc/netplan/00-installer-config.yaml у r1](/screenshots/screenshot22.png)  
+* Содержание файла etc/netplan/00-installer-config.yaml у r2  
+ ![etc/netplan/00-installer-config.yaml у r2](/screenshots/screenshot23.png)
 
-
+ ![Ввод команды sudo netplan apply](/screenshots/screenshot24.png)  
+ * Использование команды sudo netplan apply  
+ ![Результат пинга](/screenshots/screenshot25.png)  
+ * Пингуем w22 c ws 21 и r1 с ws11
 
 **== Задание 5.2 ==**
 
