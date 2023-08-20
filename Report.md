@@ -238,6 +238,26 @@ Settings -> network -> включаем адаптер, выбираем NAT net
 
 **== Выполнение ==**
 
+**4.1 Утилита iptables**  
+![Вывод на ws1](/screenshots/screenshot12.png)  
+firewall.sh на ws1  
+![Вывод на ws2](/screenshots/screenshot13.png)  
+firewall.sh на ws2
+
+* Запустить файлы на обеих машинах командами chmod +x /etc/firewall.sh и /etc/firewall.sh  
+![Запуск firewall.sh на обеих машинах](/screenshots/screenshot14.png)  
+* Пингуем машины  
+![Итоги пинга](/screenshots/screenshot15.png)
+* Разница между стратегиями: для того, чтобы одна машинга пинговалась, а вторая нет, не обязательно писать обе строки, так как правила обрабатываются в порядке их написания.
+
+**4.1 Утилита nmap**  
+*Пингуем с каждой машины себя и вторую машину  
+![Итоги пинга](/screenshots/screenshot16.png)  
+* Видим что не пингуется ws1(192.168.100.10)  
+* Запускаем команду nmap ws1 с ws1, nmap 192.168.100.10 с ws2 и видим Host is up - хост запущен  
+![Итоги пинга](/screenshots/screenshot17.png)  
+* Делаем в VirtualBox снимок  
+ 
 ## Part 5. Статическая маршрутизация сети ##
 <a name="Part5"/>
 
