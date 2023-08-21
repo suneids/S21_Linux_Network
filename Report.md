@@ -565,6 +565,18 @@ _ws21_
 
 **== Выполнение ==**
 
+* Устанавливаем сервер Apache2 командой sudo apt install apache2  
+* В файле /etc/apache2/ports.conf на ws22 и r1 изменяем строку Listen 80 на Listen 0.0.0.0:80  
+![Файл /etc/apache2/ports.conf на r1](/screenshots/screenshot57.png)  
+_r1_  
+![Файл /etc/apache2/ports.conf на ws22](/screenshots/screenshot58.png)  
+_ws22_  
+* Запускаем веб-сервер Apache командой service apache2 start на ws22 и r1  
+![Запуск apache2 на r1](/screenshots/screenshot59.png)  
+_r1_  
+![Запуск apache2 на ws22](/screenshots/screenshot60.png)  
+_ws22_
+
 **== Задание 7.1 - 7.3 ==**
 
 **Добавить в фаервол, созданный по аналогии с фаерволом из [Части 4](#Part4), на r2 следующие правила:**  
@@ -580,6 +592,20 @@ _ws21_
 
 **== Выполнение ==**
 
+* Создаем на r2 файл /etc/firewall.sh, имитирующий фаерволл  
+* Добавляем в фаервол следующие правила:  
+    iptables -F  
+    iptables -F -t nat  
+    iptables --policy FORWARD DROP  
+![firewall.sh на r2](/screenshots/screenshot61.png)  
+_r2_  
+* Запускаем файл командами sudo chmod +x /etc/firewall.sh и sudo bash /etc/firewall.sh  
+![Вывод команд](/screenshots/screenshot62.png)  
+_r2_  
+* Проверяем соединение между ws22 и r1 командой ping, ws22 не должна "пинговаться" с r1  
+![Проверка соединения](/screenshots/screenshot63.png)  
+_r1_  
+
 **== Задание 7.4 ==**
 
 **Добавить в файл ещё одно правило:**  
@@ -592,6 +618,18 @@ _ws21_
 * В отчёт поместить скрины с вызовом и выводом использованной команды.
 
 **== Выполнение ==**
+
+* Добавляем в фаервол следующие правила:  
+    iptables -A INPUT -p icmp --icmp-type 8 -j ACCEPT  
+    iptables -A OUTPUT -p icmp --icmp-type 8 -j ACCEPT  
+![firewall.sh на r2](/screenshots/screenshot64.png)  
+_r2_  
+* Запускаем файл командами sudo chmod +x /etc/firewall.sh и sudo bash /etc/firewall.sh  
+![Вывод команд](/screenshots/screenshot65.png)  
+_r2_  
+* Проверяем соединение между ws22 и r1 командой ping, ws22 должна "пинговаться" с r1  
+![Проверка соединения](/screenshots/screenshot66.png)  
+_r1_  
 
 **== Задание 7.5 - 7.6 ==**
 
