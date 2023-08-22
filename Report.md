@@ -592,7 +592,7 @@ _ws22_
 
 **== Выполнение ==**
 
-* Создаем на r2 файл /etc/firewall.sh, имитирующий фаерволл  
+* Создаем на r2 файл /etc/firewall.sh, имитирующий фаервол  
 * Добавляем в фаервол следующие правила:  
     iptables -F  
     iptables -F -t nat  
@@ -654,6 +654,20 @@ VirtualBox, если он включен**
 
 **== Выполнение ==**
 
+* Добавляем в фаервол следующие правила:  
+![Содержимое файла firewall.sh](/screenshots/screenshot67.png)  
+_r2_  
+* Отключаем сетевой интерфейс NAT  
+* Запускаем файл командами sudo chmod +x /etc/firewall.sh и sudo bash /etc/firewall.sh  
+![Результат выполнения команд](/screenshots/screenshot68.png)  
+_r2_  
+* Проверить соединение по TCP для SNAT, для этого с ws22 подключаемся к серверу Apache на r1 командой: telnet 10.10.0.1 80  
+![Проверка соединения SNAT](/screenshots/screenshot69.png)  
+_ws22_  
+* Проверяем соединение по TCP для DNAT, для этого с r1 подключаемся к серверу Apache на ws22 командой telnet 10.20.0.20 80  
+![Проверка соединения DNAT](/screenshots/screenshot70.png)  
+_r1_
+
 ## Part 8. Дополнительно. Знакомство с SSH Tunnels ##
 <a name="Part8"/>
 
@@ -679,3 +693,17 @@ VirtualBox, если он включен**
 **Сохранить дампы образов виртуальных машин**
 
 **== Выполнение ==**
+
+*Запускаем на r2 фаервол с правилами из [Части 7](#Part7):  
+![Команды для запуска firewall.sh](/screenshots/screenshot71.png)  
+_r2_  
+* Запускаем веб-сервер Apache на ws22 только на localhost (то есть в файле /etc/apache2/ports.conf меняем строку Listen 80 на  
+Listen localhost:80  
+![Проверка соединения](/screenshots/screenshot72.png)  
+_ws22_  
+* Воспользуемся Local TCP forwarding с ws21 до ws22, чтобы получить доступ к веб-серверу на ws22 с ws21  
+![Проверка соединения](/screenshots/screenshot73.png)  
+_ws21_  
+* Воспользуемся Remote TCP forwarding c ws11 до ws22, чтобы получить доступ к веб-серверу на ws22 с ws11  
+![Проверка соединения](/screenshots/screenshot74.png)  
+_ws11_
